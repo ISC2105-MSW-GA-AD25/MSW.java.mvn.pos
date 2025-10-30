@@ -1,9 +1,11 @@
-# Proyecto - Java POS - Maven
+# Proyecto Java POS con Maven
 
-Proyecto de mini Punto de Venta (POS) en Java con Maven.
+Este proyecto implementa un mini sistema de Punto de Venta (POS) desarrollado en Java utilizando Maven como herramienta de gestión de dependencias y construcción.
 
-## Diagrama de clases
-[Editor en línea](https://mermaid.live/)
+## Diagrama de Clases
+
+Puedes editar y visualizar el siguiente diagrama utilizando el [Editor en línea de Mermaid](https://mermaid.live/).
+
 ```mermaid
 ---
 title: Clase
@@ -17,81 +19,110 @@ classDiagram
       Clase: +op3()
       Clase: +op4()
 ```
-[Referencia-Mermaid](https://mermaid.js.org/syntax/classDiagram.html)
+**Referencia:** [Sintaxis de Diagramas de Clases en Mermaid](https://mermaid.js.org/syntax/classDiagram.html)
 
-## Diagrama de clases UML con draw.io
-El repositorio está configurado para crear Diagramas de clases UML con ```draw.io```. Para usarlo, agrega un archivo con extensión ```.drawio.png```, haz doble clic sobre el mismo y se activará el editor ```draw.io``` incrustado en ```VSCode``` para edición. Asegúrate de agregar las formas UML en el menú de formas del lado izquierdo (opción ```+Más formas```).
+## Diagrama de Clases UML con Draw.io
 
-# Generar UML con AppMap
+El repositorio está configurado para crear diagramas de clases UML utilizando **Draw.io**. 
 
-## En Codespaces:
-Ejecuta el comando:
-```
+### Instrucciones de uso:
+1. Agrega un archivo con extensión `.drawio.png` al repositorio
+2. Haz doble clic sobre el archivo para activar el editor Draw.io integrado en VS Code
+3. Asegúrate de agregar las formas UML desde el menú de formas del lado izquierdo (selecciona la opción **+Más formas**)
+
+## Generación de Diagramas UML con AppMap
+
+### Uso en GitHub Codespaces:
+
+Ejecuta el siguiente comando para generar los diagramas:
+```bash
 mvn com.appland:appmap-maven-plugin:prepare-agent test
 ```
-Luego haz clic en el archivo `tmp/appmap/junit/miPrincipal_AppTest_testingList.appmap.json`. Se mostrará el Diagrama de Secuencia.
+Posteriormente, haz clic en el archivo `tmp/appmap/junit/miPrincipal_AppTest_testingList.appmap.json` para visualizar el diagrama de secuencia generado.
 
-## En VS Code Local:
+### Uso en VS Code Local:
 
-Ejecuta las pruebas locales con VS Code.
+1. Ejecuta las pruebas locales desde VS Code
+2. Haz clic en el archivo `tmp/appmap/junit/miPrincipal_AppTest_testingList.appmap.json` para visualizar el diagrama de secuencia
 
-Luego haz clic en el archivo `tmp/appmap/junit/miPrincipal_AppTest_testingList.appmap.json`. Se mostrará el Diagrama de Secuencia.
+## Generación de Diagramas UML usando Navie Chat (IA de AppMap)
 
-# Generar UML usando Navie Chat (IA de AppMap)
+### Prompts para generar diagramas de clases y secuencia:
 
-## Prompts para generar Diagramas de Clases y Secuencia
+Utiliza los siguientes prompts para generar los diagramas. Una vez generado, puedes visualizarlo en [Mermaid Live](https://mermaid.live/) y copiar el código para documentarlo en este archivo README.md.
 
-Use estos prompts para generar los Diagramas de Clase y Secuencia. Una vez generado el diagrama puede ver el mismo en mermaid Live y de ahí tomar el código para documentarlos en este mismo archivo README.md
-```
+```text
 @diagram Genera un Diagrama de clases para el paquete `miPrincipal` 
 @diagram Genera un Diagrama de secuencia para el paquete `miPrincipal`
 ```
-# Explicar el proyecto usando Navie Chat:
 
-## Prompt para explicar el proyecto
+### Explicación del proyecto usando Navie Chat:
 
-```
+**Prompt para obtener una explicación del proyecto:**
+
+```text
 @explain la programación de este proyecto
 Explica la programación de este proyecto
 ```
-# Uso del proyecto con Maven
 
-## Compilar
-```
+## Uso del Proyecto con Maven
+
+### Compilar el proyecto:
+```bash
 mvn compile
 ```
-## Probar N tests
-```
+
+### Ejecutar todas las pruebas:
+```bash
 mvn test
 ```
-## Probar 1 test
-```
+
+### Ejecutar una prueba específica:
+```bash
 mvn test -Dtest="AppTest#testPOS" 
 ```
-## Ejecutar App
-```
+
+### Ejecutar la aplicación:
+
+**Opción 1:** Usando Maven:
+```bash
 mvn -q exec:java
 ```
-```
+
+**Opción 2:** Usando Java directamente:
+```bash
 java -cp target/classes miPrincipal.App
 ```
-## Empacar App
-```
+
+### Empaquetar la aplicación:
+```bash
 mvn package
 ```
-## Limpiar binarios
-```
+
+### Limpiar archivos compilados:
+```bash
 mvn clean
 ```
-# Comandos Git-Cambios y envío a Autograding
 
-## Por cada cambio importante que haga, actualice su historia usando los comandos:
-```
+## Control de Versiones con Git
+
+### Registrar cambios localmente:
+
+Por cada cambio importante que realices, actualiza el historial del repositorio con los siguientes comandos:
+
+```bash
 git add .
 git commit -m "Descripción del cambio"
 ```
-## Envíe sus actualizaciones a GitHub para Autograding con el comando:
-```
+
+### Enviar cambios a GitHub:
+
+Para sincronizar tus cambios con GitHub y activar el proceso de Autograding, ejecuta:
+
+```bash
 git push origin main
 ```
-Los comandos anteriores están considerados para un ambiente Linux. [Referencia.](https://www.baeldung.com/junit-run-from-command-line)
+
+---
+
+**Nota:** Los comandos anteriores están diseñados para un ambiente Linux. Para más información, consulta la [referencia de JUnit desde línea de comandos](https://www.baeldung.com/junit-run-from-command-line).
